@@ -8,13 +8,17 @@ import Home from './component/Home';
 
 function App() {
 
+  // use usecontext for getting global component state
   const useContextAPI = useContext(DataContext);
   
   return (
     <>
+    {/* use theme sate for dark and light theme  */}
     <div className={`${useContextAPI.theme === "dark" && "dark"}`}>
       <Router>
-      <Header /> 
+        {/* header compoennt comes in all route  */}
+      <Header />
+       {/* these are routes that at which path whihc component will mount   */}
         <Routes>
           <Route path="/" element={<Gallery />} />
           <Route path="/collection" element={<Collection />} />

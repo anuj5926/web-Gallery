@@ -1,9 +1,11 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
+//  get createConetxt for create conetxt for state management 
 export const DataContext = createContext(null)
 const ContextApi = ({ children }) => {
 
+    // all the global states 
     const [allTypeData, setAllTypeData] = useState([]);
     const [page, setPage] = useState(0);
     const [pageData, setPageData] = useState([]);
@@ -12,6 +14,7 @@ const ContextApi = ({ children }) => {
     const [theme, setTheme] = useState("light");
     const [collection, setCollection] = useState([]);
 
+    // call the api to get the data 
     useEffect(() => {
         (async () => {
             const allData = await axios.get(`${import.meta.env.VITE_APP_NASA_API}`)
@@ -26,12 +29,14 @@ const ContextApi = ({ children }) => {
         })()
     }, [])
 
+    // according to page update page Data state 
     useEffect(() => {
         if (page && allTypeData) {
             setPageData(allTypeData?.slice((page - 1) * 10, page * 10));
         }
     }, [page])
 
+    // check all the images loaded or not if loaded remove loader otherwise show loader
     useEffect(() => {
         if (pageData && pageData.length > 0) {
             let loadedCount = 0;
@@ -52,6 +57,7 @@ const ContextApi = ({ children }) => {
         }
     }, [pageData]);
 
+    // get the data for collection of images
     useEffect(() => {
         if (allTypeData) {
             setPage(1);
@@ -70,6 +76,7 @@ const ContextApi = ({ children }) => {
     }, [allTypeData])
 
     return (
+        // return the state to access to other component 
         <DataContext.Provider value={{collection, theme, setTheme, isLoading, setCancelRemove, setIsLoading, cancelRemove, pageData, setPage, page, setAllTypeData, allTypeData }}>{children}</DataContext.Provider>
     )
 
