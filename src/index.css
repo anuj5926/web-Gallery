@@ -30,7 +30,7 @@
   color: white;
   margin-bottom: 20px;
   background: rgba(145, 255, 0, 0.808);
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .logo img {
@@ -95,24 +95,24 @@
   }
 
   .tab-button {
-    width: 100%; 
+    width: 100%;
     padding: 10px;
     font-size: 18px;
   }
 
   .logo img {
-    width: 80px; 
+    width: 80px;
   }
 }
 
 @media (max-width: 480px) {
   .tab-button {
-    font-size: 14px; 
+    font-size: 14px;
     padding: 8px;
   }
 
   .search-bar input {
-    font-size: 14px; 
+    font-size: 14px;
   }
 }
 
@@ -171,6 +171,7 @@ img {
 .gallery li {
   position: relative;
 }
+
 .gallery li button {
   position: absolute;
   top: 0;
@@ -237,12 +238,12 @@ img {
   .btnhead {
     padding-left: 20px;
     padding-right: 20px;
-    flex-direction: column;  
-    gap: 10px; 
+    flex-direction: column;
+    gap: 10px;
   }
 
   .btn {
-    width: 100%; 
+    width: 100%;
     padding: 12px 0;
     font-size: 18px;
   }
@@ -284,63 +285,72 @@ img {
 }
 
 /*dark theme css  */
-.dark{
+.dark {
   background-color: black;
   color: white;
 }
 
 .pagination-dark .page-item .page-link {
-  color: black; 
-  background-color: white; 
-  border-color: black; 
+  color: black;
+  background-color: white;
+  border-color: black;
 }
 
 .pagination-dark .page-item.active .page-link {
   color: white;
-  background-color: black; 
+  background-color: black;
   border-color: black;
 }
 
 .pagination-dark .page-item.disabled .page-link {
   color: gray;
-  background-color: white; 
-  border-color: gray; 
+  background-color: white;
+  border-color: gray;
 }
-.dark .pagination-dark .page-item.disabled .page-link, .dark .pagination-dark .page-item .page-link {
+
+.dark .pagination-dark .page-item.disabled .page-link,
+.dark .pagination-dark .page-item .page-link {
   background: #2d2c2c;
   border-color: #2d2c2c;
 }
+
 .pagination-dark .page-item.active .page-link {
   color: white;
   background-color: blue;
   border-color: blue;
 }
+
 .pagination-dark .page-item .page-link {
   color: #fff;
 }
+
 .dark h1 {
   color: #fff;
 }
 
 
 /* collection card container css  */
-body{
+body {
   margin: 0;
   padding: 0;
-  font-family: 'roboto' , sans-serif;
+  font-family: 'roboto', sans-serif;
   background-color: #F2F2F2;
 }
-h1{
+
+h1 {
   text-align: center;
   color: #333333;
 }
-.cardcontainer{
+
+.cardcontainer {
   background-color: white;
   transition: 0.3s;
 }
-.photo{
+
+.photo {
   width: 100%;
 }
+
 .cardcontainer {
   width: 31%;
   cursor: pointer;
@@ -348,17 +358,20 @@ h1{
   border-radius: 8px;
   padding: 8px;
 }
+
 .photo img {
   height: 220px;
   width: 100%;
   object-fit: cover;
 }
-.txt1{
+
+.txt1 {
   margin: auto;
   text-align: center;
   font-size: 17px;
 }
-.content{
+
+.content {
   width: 80%;
   height: 100px;
   margin-left: auto;
@@ -366,55 +379,70 @@ h1{
   position: relative;
   top: -33px;
 }
+
 .photos {
-	width: 100%;
-	height: 30px;
-	background-color: #E74C3CB5;
-	color: white;
-	position: absolute;
-	bottom: 0;
-	padding-left: 10px;
-	font-size: 20px;
-	text-align: center;
-	transition: .2s linear all;
-	transform: translateY(255%);
-	left: 0;
-	right: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #E74C3CB5;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  padding-left: 10px;
+  font-size: 20px;
+  text-align: center;
+  transition: .2s linear all;
+  transform: translateY(255%);
+  left: 0;
+  right: 0;
 }
+
 .photo:hover .photos {
   transform: translateY(0);
 }
+
 .photo {
   position: relative;
   overflow: hidden;
 }
+
 .photo img {
   border-radius: 8px;
   transition: .4s linear all;
 }
+
 .photo:hover img {
   transform: scale(1.1);
 }
-.txt4{
-  font-size:27px;
+
+.txt4 {
+  font-size: 27px;
   position: relative;
   top: 33px;
 }
-.txt5{
+
+.txt5 {
   position: relative;
   top: 18px;
   color: #E74C3C;
   font-size: 23px;
 }
-.txt2{
+
+.txt2 {
   position: relative;
   top: 10px;
 }
-@keyframes move1{
-  0%{height: 300px}
-  100%{height: 200px}
+
+@keyframes move1 {
+  0% {
+    height: 300px
+  }
+
+  100% {
+    height: 200px
+  }
 }
-.footer{
+
+.footer {
   width: 80%;
   height: 100px;
   margin-left: auto;
@@ -423,40 +451,50 @@ h1{
   position: relative;
   top: -15px;
 }
-.btn{
+
+.btn {
   position: relative;
   top: 20px;
 }
-#heart{
+
+#heart {
   cursor: pointer;
 }
-.like{
+
+.like {
   float: right;
   font-size: 22px;
   position: relative;
   top: 20px;
   color: #333333;
 }
-.fa-gratipay{
+
+.fa-gratipay {
   margin-right: 10px;
   transition: 0.5s;
 }
-.fa-gratipay:hover{
+
+.fa-gratipay:hover {
   color: #E74C3C;
 }
-.txt3{
+
+.txt3 {
   color: gray;
   position: relative;
   top: 18px;
   font-size: 14px;
 }
-.comments{
+
+.comments {
   float: right;
   cursor: pointer;
 }
-.fa-clock, .fa-comments{
+
+.fa-clock,
+.fa-comments {
   margin-right: 7px;
 }
+
 .category_block {
   display: flex;
   width: 100%;
@@ -464,6 +502,7 @@ h1{
   gap: 15px;
   margin-top: 25px;
 }
+
 .dark {
   padding-bottom: 40px;
 }
@@ -473,9 +512,8 @@ h1{
   .cardcontainer {
     width: 100%;
   }
+
   .category_block {
     gap: 10px 0;
   }
 }
-
-

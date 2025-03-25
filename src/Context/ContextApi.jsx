@@ -13,16 +13,18 @@ const ContextApi = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [theme, setTheme] = useState("light");
     const [collection, setCollection] = useState([]);
+    const [color, setColor] = useState("white");
+    const [colorPreferences, setColorPreferences] = useState(false)
 
     // call the api to get the data 
     useEffect(() => {
         (async () => {
             const allData = await axios.get(`${import.meta.env.VITE_APP_NASA_API}`)
-            if(allData.status === 200 && allData?.data?.collection?.items && allData?.data?.collection?.items?.length > 0){
+            if (allData.status === 200 && allData?.data?.collection?.items && allData?.data?.collection?.items?.length > 0) {
                 console.log("🚀 ~ allData:", allData)
                 setAllTypeData(allData.data.collection.items);
                 setPage(1);
-            }else{
+            } else {
                 setAllTypeData([]);
                 setIsLoading(false);
             }
@@ -77,7 +79,7 @@ const ContextApi = ({ children }) => {
 
     return (
         // return the state to access to other component 
-        <DataContext.Provider value={{collection, theme, setTheme, isLoading, setCancelRemove, setIsLoading, cancelRemove, pageData, setPage, page, setAllTypeData, allTypeData }}>{children}</DataContext.Provider>
+        <DataContext.Provider value={{ colorPreferences, setColorPreferences, setColor, color, collection, theme, setTheme, isLoading, setCancelRemove, setIsLoading, cancelRemove, pageData, setPage, page, setAllTypeData, allTypeData }}>{children}</DataContext.Provider>
     )
 
 }

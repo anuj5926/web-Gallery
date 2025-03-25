@@ -17,21 +17,20 @@ function Header() {
 
     //this function is used to naviagte to / route
     const handleGalleryClick = () => {
-        navigate('/');  
+        navigate('/');
     };
 
     // this function is used to call api according to the query in search box and update data in state
     const handleSearch = () => {
-        (async ()=>{
-            if(searchQuery && searchQuery?.length > 0){
+        (async () => {
+            if (searchQuery && searchQuery?.length > 0) {
                 useContextAPI.setIsLoading(true);
                 const allData = await axios.get(`${import.meta.env.VITE_APP_NASA_API_DYNAMIC_SEARCH}search?q=${searchQuery}&media_type=image`);
-                console.log("🚀 ~ allData:", allData,allData?.data?.collection?.items?.length)
-                if(allData.status === 200  && allData?.data?.collection?.items && allData?.data?.collection?.items?.length > 0){
+                if (allData.status === 200 && allData?.data?.collection?.items && allData?.data?.collection?.items?.length > 0) {
                     useContextAPI.setAllTypeData(allData.data.collection.items);
                     useContextAPI.setPage(1);
                     useContextAPI.setCancelRemove(false);
-                }else{
+                } else {
                     useContextAPI.setAllTypeData([]);
                     useContextAPI.setIsLoading(false);
                 }
@@ -41,17 +40,20 @@ function Header() {
 
     //this function is used to naviagte to /collection route
     const handleCollectionClick = () => {
-        navigate('/collection');  
+        navigate('/collection');
     };
 
     // this function is used to switch theme
     const handleThemeClick = () => {
-        useContextAPI.setTheme(useContextAPI.theme === "light"? "dark":"light"); 
+        useContextAPI?.setColorPreferences(false);
+        useContextAPI.setTheme(useContextAPI.theme === "light" ? "dark" : "light");
     };
+
+    console.log(useContextAPI?.color, "dlfjjg")
 
     return (
         <>
-        {/* this is the ui part of the header  */}
+            {/* this is the ui part of the header  */}
             <header className="header">
                 {/* this is the logo  */}
                 <div className="logo">
@@ -61,17 +63,21 @@ function Header() {
                 <div>
                     <button onClick={handleGalleryClick} className="tab-button">Gallery</button>
                     <button onClick={handleCollectionClick} className="tab-button">Collections</button>
-                    <button onClick={handleThemeClick} className="tab-button">{useContextAPI?.theme === "light" ? "Switch to Dark Theme":"Switch to Light Theme"}</button>
+                    <button onClick={handleThemeClick} className="tab-button">{useContextAPI?.theme === "light" ? "Switch to Dark Theme" : "Switch to Light Theme"}</button>
                 </div>
                 {/* this is the search bar for query data  */}
                 <div className="search-bar">
                     <input
                         type="text"
                         placeholder="Search..."
-                        onChange={(e)=>setSearchQuery(e.target.value)}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                     />
                     {/* button to search  */}
                     <button onClick={handleSearch} className="tab-button">search</button>
+                </div>
+                {/* add color preferences for user  */}
+                <div className="color-picker">
+                    <input type="color" id="colorInput" defaultValue="#ffffff" onChange={(e) => { useContextAPI?.setColor(e.target.value); useContextAPI?.setColorPreferences(true) }} />
                 </div>
             </header>
         </>
