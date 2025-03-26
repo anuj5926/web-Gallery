@@ -39,10 +39,10 @@ Explanation of folders and components:
 │   │── 📂 context       # Context API files for state management
 │   │── App.jsx          # Root component
 │   │── main.jsx         # Entry point of the application
+│── index.html           # It holds the root <div> where your React app will be mounted
 │── .env                 # Environment variables
 │── .gitignore           # Files to ignore in Git
 │── package.json         # Project dependencies and scripts
-│── vite.config.js       # Vite configuration file
 │── README.md            # Documentation
 
 🔍 Explanation of Key Folders and Files
@@ -52,6 +52,7 @@ Explanation of folders and components:
     context/ → Stores global state management files using React Context API.
     App.jsx → The root component of the application.
     main.jsx → The main entry file that renders the React app inside the root div.
+    index.html: This is the entry point for the Vite build. It holds the root <div> where your React app will be mounted.
     .env → Stores environment variables (e.g., API keys).
     .gitignore → Specifies files to be ignored by Git (e.g., node_modules, .env)
     package.json → Manages project dependencies and scripts.
