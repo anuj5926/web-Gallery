@@ -8,10 +8,10 @@ function Collection() {
   // use useContext to get state data
   const useContextAPI = useContext(DataContext);
 
-  // this will help to naviagte to different route
+  // this will help to navigate to different route
   const navigate = useNavigate();
 
-  // this function is called when you clicked on collection and it will naviagte you to that collection images
+  // this function is called when you clicked on collection and it will navigate you to that collection images
   const handlePage = (pageNumber) => {
     useContextAPI.setPage(pageNumber)
     navigate("/collection/gallery")

@@ -31,7 +31,7 @@ function Pagination() {
 
     return (
         <>
-        {/* when isLoading is false than only this pageination ui show and no data found this will not show */}
+        {/* when isLoading is false than only this pagination ui show and no data found this will not show */}
             {!useContextAPI.isLoading && useContextAPI?.allTypeData && useContextAPI?.allTypeData.length > 0 && 
              <nav >
                 <ul className={`pagination ${useContextAPI.theme === "dark" && "pagination-dark"}`}>

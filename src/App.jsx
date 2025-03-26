@@ -8,7 +8,7 @@ import Home from './component/Home';
 
 function App() {
 
-  // use usecontext for getting global component state
+  // use useContext for getting global component state
   const useContextAPI = useContext(DataContext);
 
   return (
@@ -17,9 +17,9 @@ function App() {
       <div style={{ ...(useContextAPI?.colorPreferences && { backgroundColor: useContextAPI.color }), }}
         className={`${useContextAPI.theme === "dark" && "dark"}`}>
         <Router>
-          {/* header compoennt comes in all route  */}
+          {/* header component comes in all route  */}
           <Header />
-          {/* these are routes that at which path whihc component will mount   */}
+          {/* these are routes that at which path which component will mount   */}
           <Routes>
             <Route path="/" element={<Gallery />} />
             <Route path="/collection" element={<Collection />} />

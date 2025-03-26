@@ -12,10 +12,10 @@ function Header() {
     // this is the local state for search bar query
     const [searchQuery, setSearchQuery] = useState("");
 
-    // this is used to naviagte to other route
+    // this is used to navigate to other route
     const navigate = useNavigate();
 
-    //this function is used to naviagte to / route
+    //this function is used to navigate to / route
     const handleGalleryClick = () => {
         navigate('/');
     };
@@ -38,7 +38,7 @@ function Header() {
         })()
     };
 
-    //this function is used to naviagte to /collection route
+    //this function is used to navigate to /collection route
     const handleCollectionClick = () => {
         navigate('/collection');
     };
@@ -59,7 +59,7 @@ function Header() {
                 <div className="logo">
                     <img src="/logo.jpg" alt="Logo" />
                 </div>
-                {/* thses are the button for naviagte and theme change  */}
+                {/* thses are the button for navigate and theme change  */}
                 <div>
                     <button onClick={handleGalleryClick} className="tab-button">Gallery</button>
                     <button onClick={handleCollectionClick} className="tab-button">Collections</button>
